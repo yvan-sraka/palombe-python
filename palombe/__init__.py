@@ -1,15 +1,20 @@
 import os
 
-PREFIX = "/tmp/palombe/"
+def mkfifo(name):
+    prefix = "/tmp/palombe/"
+    path = "%s%s" % (prefix, name)
+    if not os.path.exists(prefix):
+        os.makedirs(prefix)
+    if not os.path.exists(path):
+        os.mkfifo(path)
+    return path
 
 def send(name, value):
-    path = "%s%s" % (PREFIX, name)
-    os.makedirs(PREFIX)
-    os.mkfifo(path)
-    file = open(path, "w")
+    file = open(mkfifo(name), "w")
     file.write(value)
 
 def receive(name):
-    path = "%s%s" % (PREFIX, name)
+    path = mkfifo(name)
     file = open(path, "r")
+    os.remove(path)
     return file.read()
