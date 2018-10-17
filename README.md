@@ -4,9 +4,18 @@ Palombe lets you send and receive messages synchronously through different proce
 
 ## Quick example
 
-```javascript
-import palombe;
+### Thread A
 
-palombe.send("foo", "bar");
-print(palombe.receive("foo")); // bar
+```python
+import palombe
+
+palombe.send("foo", "bar")
+```
+
+### Thread B
+
+```python
+import palombe
+
+print(palombe.receive("foo")) // bar
 ```
