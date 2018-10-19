@@ -1,6 +1,6 @@
 import os
 
-def mkfifo(name):
+def __mkfifo(name):
     prefix = "/tmp/palombe/"
     path = "%s%s" % (prefix, name)
     if not os.path.exists(prefix):
@@ -10,11 +10,11 @@ def mkfifo(name):
     return path
 
 def send(name, value):
-    file = open(mkfifo(name), "w")
+    file = open(__mkfifo(name), "w")
     file.write(value)
 
 def receive(name):
-    path = mkfifo(name)
+    path = __mkfifo(name)
     file = open(path, "r")
     os.remove(path)
     return file.read()
