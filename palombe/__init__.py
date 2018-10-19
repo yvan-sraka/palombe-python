@@ -6,7 +6,7 @@ def mkfifo(name):
     if not os.path.exists(prefix):
         os.makedirs(prefix)
     if not os.path.exists(path):
-        os.mkfifo(path)
+        os.mkfifo(path, 0o600)
     return path
 
 def send(name, value):
