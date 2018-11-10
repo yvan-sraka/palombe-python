@@ -17,4 +17,4 @@ def receive(name):
     path = __mkfifo(name)
     file = open(path, "r")
     os.remove(path)
-    return file.read()
+    return file.read().rstrip()
