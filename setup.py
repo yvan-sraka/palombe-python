@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="palombe",
-    version="0.3.3",
+    version="0.4.0",
     author="Yvan Sraka",
     author_email="yvan@sraka.pw",
     description="Palombe lets you send and receive messages synchronously through different processes using named pipes",
