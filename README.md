@@ -1,6 +1,6 @@
-# 🕊️ Palombe [![PyPI version](https://badge.fury.io/py/palombe.svg)](https://badge.fury.io/py/palombe)
+# 🕊️ Paloma [![PyPI version](https://badge.fury.io/py/palombe.svg)](https://badge.fury.io/py/palombe)
 
-Palombe lets you send and receive messages synchronously through different processes using named pipes
+Paloma lets you send and receive messages synchronously through different processes using named pipes
 
 ## Quick example
 
@@ -17,5 +17,5 @@ palombe.send("foo", "bar")
 ```python
 import palombe
 
-print(palombe.receive("foo")) // bar
+print(palombe.receive("foo")) # bar
 ```
